@@ -12,6 +12,9 @@ public class HlavniProgram {
   public void start() {
     zofka = new Turtle();
     nakresliPrasatko();
+    mezera();
+    slunicko();
+    slunickoDva();
   }
 
   public void nozickyJedna() {
@@ -28,6 +31,7 @@ public class HlavniProgram {
     zofka.move(30);
   }
 
+  // prasatko
   public void nozickyDva() {
     zofka.turnRight(100);
     zofka.move(30);
@@ -39,23 +43,50 @@ public class HlavniProgram {
     zofka.move(30);
   }
 
-    public void nakresliPrasatko() {
-      for (int i = 0; i < 4; i++) {
-        zofka.turnRight(90);
-        zofka.move(100);
-      }
-
-      for (int i = 0; i < 2; i++) {
-        zofka.turnLeft(120);
-        zofka.move(100);
-      }
-
-      nozickyJedna();
-
-      zofka.turnRight(110);
+  public void nakresliPrasatko() {
+    for (int i = 0; i < 4; i++) {
+      zofka.turnRight(90);
       zofka.move(100);
+    }
 
-      nozickyDva();
+    for (int i = 0; i < 2; i++) {
+      zofka.turnLeft(120);
+      zofka.move(100);
+    }
+
+    nozickyJedna();
+
+    zofka.turnRight(110);
+    zofka.move(100);
+
+    nozickyDva();
   }
+
+  public void mezera() {
+    zofka.penUp();
+    zofka.turnLeft(120);
+    zofka.move(100);
+    zofka.penDown();
+  }
+
+  // zkouseka obrazcu
+  public void slunicko() {
+    for (int i = 0; i < 20; i++) {
+      zofka.move(5);
+      zofka.turnRight(20);
+      zofka.move(5);
+    }
+    mezera();
+  }
+
+  public void slunickoDva() {
+    for (int i = 0; i < 20; i++) {
+      zofka.move(10);
+      zofka.turnRight(30);
+      zofka.move(10);
+    }
+
+  }
+
 
 }
